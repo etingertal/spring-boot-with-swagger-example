@@ -1,0 +1,18 @@
+spring:
+    datasource:
+        url: jdbc:h2:file:~/test
+        username: sa
+        password:
+
+        # Keep the connection alive if idle for a long time (needed in production)
+        testWhileIdle: true
+        validationQuery: SELECT 1
+        initialize: false # Populate the database using 'data.sql'.
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate.ddl-auto: update # create to recreate scheme
+        show-sql: false
+    h2:
+        console:
+            enabled: true
+            path: /h2
